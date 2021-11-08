@@ -14,6 +14,5 @@ public class Main {
         }while (lineCount >= 230 || lineCount <= 0);
         Printer printer = new Printer(lineCount);
         printer.print();
-
     }
 }
