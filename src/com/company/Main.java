@@ -8,12 +8,13 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         byte[] strings = new byte[100];
-        Arrays.fill(strings, (byte) 'a');
         int x = 10;
+        String fileName = x + " lines with 100 unique characters";
+        Arrays.fill(strings, (byte) 'a');
 
         byte[] crlf = new byte[] {'\r', '\n'};
 
-        FileOutputStream fileOutputStream = new FileOutputStream("test");
+        FileOutputStream fileOutputStream = new FileOutputStream(fileName);
 
         for (int i = 0; i < x; i++) {
             fileOutputStream.write(strings);
