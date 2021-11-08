@@ -11,7 +11,15 @@ public class Main {
         Arrays.fill(strings, (byte) 'a');
         int x = 10;
 
+        byte[] crlf = new byte[] {'\r', '\n'};
+
+        FileOutputStream fileOutputStream = new FileOutputStream("test");
+
         for (int i = 0; i < x; i++) {
+            fileOutputStream.write(strings);
+            fileOutputStream.write(crlf);
+            fileOutputStream.flush();
+
             for (int j = 0; j < 100; j++) {
                 strings[j]++;
                 if (strings[j] <= 'z') {
@@ -21,5 +29,7 @@ public class Main {
                 }
             }
         }
+
+        fileOutputStream.close();
     }
 }
